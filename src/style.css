@@ -1,14 +1,22 @@
 body {
     font-family: arial, sans-serif;
     font-weight: 200;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-top: 2.5rem;
+    
 }
 
 h1{
     color: #9098a2;
     line-height: 32px;
     margin: 0;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin: 1rem 0;
     padding:0;
 }
 ul{
@@ -40,26 +48,50 @@ sup.temp-type {
 
 .weather-app{
     border: 2px solid darkgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 600px;
     max-height: 600px;
-    margin: 0 auto;
+    margin: 2.5rem auto 7rem;
     padding: 20px 60px;
     border-radius: 20px;
-    background:linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);;
+    background:linear-gradient(to top, #ebfff6 0%, #ace0f9 100%);;
+}
+
+
+#search-form{
+    margin-top: .7rem;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
 }
 
 #search-city {
     border: none;
     box-shadow: 5px 5px 5px darkgray;
+    border-radius: 8px;
+    
+}
+
+input[type="search"] {
+    width: 300px;
+    height: 50px;
+    font-size:1rem;
+    text-align: center;
 }
 
 #submit-search {
     background: #2172e4;
-    margin: 5px 5px;
+    margin: .8rem .8rem;
     border-radius: 40px;
     box-shadow: 5px 5px 5px darkgray;
     color:antiquewhite;
     border: none;
+    width: 300px;
+    height: 50px;
+    font-size:1rem;
+
 }
 
 #submit-search:hover{
@@ -75,6 +107,9 @@ sup.temp-type {
     box-shadow: 5px 5px 5px darkgray;
     color:antiquewhite;
     border: none;
+    width: 300px;
+    height: 50px;
+    font-size:1rem;
 }
 #submit-currentCity:hover{
     background: antiquewhite;
@@ -82,7 +117,12 @@ sup.temp-type {
     transition: all 150ms ease-in-out;
 }
 
-.display-temp {
+#weather-details {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.far-temp, .cel-temp{
     font-size: 48px; 
 }
 
@@ -95,22 +135,30 @@ sup.temp-type {
     margin-top:15px;
 }
 
+
 #forecast {
-    margin-top: 15px;
-    margin-left: 10px;
+    margin: 2rem auto 0;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row;
+    justify-content: space-between;    
 }
+
+.temp {
+    text-align: center;
+}
+
 .github-link {
     text-align: center;
     border: 1px dotted blue;
 }
 
-#icon {
-    position: relative;
-    bottom: 10px;
-}
+@media (min-width: 1200px) {
+    #search-form{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
 
-#fahrenheit.active, #celsius.active {
-    color:#454a4f;
-    cursor: default;
-    text-decoration: none;
 }
